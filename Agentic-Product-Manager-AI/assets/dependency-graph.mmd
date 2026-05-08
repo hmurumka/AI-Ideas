@@ -1,0 +1,15 @@
+graph LR
+    JIRA[JIRA Webhooks] --> EpicAgent
+    Confluence[Confluence API] --> EpicAgent
+    GitHub[GitHub API] --> EpicAgent
+    Queue[Message Queue] --> EpicAgent
+
+    EpicAgent --> CodingAgent
+    EpicAgent --> TestingAgent
+    EpicAgent --> DocumentationAgent
+
+    CodingAgent --> Repo[Repositories]
+    TestingAgent --> CI[CI/CD Pipeline]
+    DocumentationAgent --> Docs[Confluence Pages]
+
+    EpicAgent --> Digest[Weekly Dashboard]
